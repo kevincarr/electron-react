@@ -22,6 +22,7 @@ const createWindow = (): void => {
   mainWindow.maximize();
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+  mainWindow.removeMenu(); // Remove the window's menu bar.
   mainWindow.show();
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
