@@ -13,16 +13,17 @@ if (require('electron-squirrel-startup')) {
 const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    height: 600,
-    width: 800,
+    show: false,
+    fullscreen: true,
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
   });
-
+  mainWindow.maximize();
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-
+  mainWindow.removeMenu(); // Remove the window's menu bar.
+  mainWindow.show();
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 };
