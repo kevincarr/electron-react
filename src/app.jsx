@@ -6,17 +6,17 @@ import noteToSelf from "./assets/Components/Shared/noteToSelf";
 function App({ callback }) {
   // Callback will be called when the div is first created.
   
-  setGlobals("testing", true);
-  console.log((globals.testing) ? "Testing is ON" : "Testing is OFF");
+  setGlobals("isTesting", true);
+  console.log((globals.isTesting) ? "Testing is ON" : "Testing is OFF");
 
   const appQuit = (e) =>{ 
-    if(!globals.testing){
+    if(!globals.isTesting){
       window.close();
     }
   }  
   const testingSet = (e) =>{ 
-    (globals.testing) ? setGlobals("testing", false) : setGlobals("testing", true);
-    console.log((globals.testing) ? "Testing is ON" : "Testing is OFF");
+    (globals.isTesting) ? setGlobals("isTesting", false) : setGlobals("isTesting", true);
+    console.log((globals.isTesting) ? "Testing is ON" : "Testing is OFF");
   }
   return (
     <div ref={callback}>
