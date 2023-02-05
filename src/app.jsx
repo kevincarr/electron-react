@@ -11,12 +11,7 @@ function App({ callback }) {
   
   setGlobals("isTesting", true);
   console.log((globals.isTesting) ? "Testing is ON" : "Testing is OFF");
-
-  const appQuit = (e) =>{ 
-    if(!globals.isTesting){
-      window.close();
-    }
-  }  
+ 
   const testingSet = (e) =>{
     (globals.isTesting) ? setGlobals("isTesting", false) : setGlobals("isTesting", true);
     console.log((globals.isTesting) ? "Testing is ON" : "Testing is OFF");
